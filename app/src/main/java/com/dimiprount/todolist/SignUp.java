@@ -37,13 +37,12 @@ public class SignUp extends ActionBarActivity implements OnClickListener {
 		case R.id.bSignUp:
 			String pass1 = etpassword.getText().toString();
 			String pass2 = etconfirmpassword.getText().toString();
-			if (pass1.length() != 0) {	// The password cannot be empty
-				if (!pass1.equals(pass2)) // If it were numbers we could use
-											// if(pass1 == pass2)
+			if (pass1.length() != 0) {
+				if (!pass1.equals(pass2))
+										
 					Toast.makeText(this, "Passwords don't match!",
 							Toast.LENGTH_SHORT).show();
 				else {
-					// Insert password in the database
 					Password p = new Password();
 					p.setPass(pass1);
 
@@ -66,7 +65,7 @@ public class SignUp extends ActionBarActivity implements OnClickListener {
 	}
 
 	@Override
-	public boolean onTouchEvent(MotionEvent event) {		// Hide keyboard when pressing out of Eddittext
+	public boolean onTouchEvent(MotionEvent event) {
 		InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
 		imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
 		return true;
