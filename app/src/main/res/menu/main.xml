@@ -1,0 +1,43 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.dimiprount.todolist.MainActivity" >
+
+    <item
+        android:id="@+id/save"
+        android:icon="@mipmap/save"
+        android:title="@string/bSave"
+        android:orderInCategory="2"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/cancel"
+        android:icon="@mipmap/cancel"
+        android:title="@string/bCancel"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/view"
+        android:title="@string/main_view"
+        app:showAsAction="never"/>
+    <!-- <item
+           android:id="@+id/yellow"
+           android:title="@string/main_yellow"
+           app:showAsAction="never"/>
+       <item
+           android:id="@+id/green"
+           android:title="@string/main_green"
+           app:showAsAction="never"/>
+       <item
+           android:id="@+id/pink"
+           android:title="@string/main_pink"
+           app:showAsAction="never"/>
+       <item
+           android:id="@+id/white"
+           android:title="@string/main_white"
+           app:showAsAction="never"/>
+       <item
+           android:id="@+id/grey"
+           android:title="@string/main_grey"
+           app:showAsAction="never"/>-->
+
+</menu>

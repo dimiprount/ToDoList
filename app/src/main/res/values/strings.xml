@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">To Do List</string>
+    <string name="etHint"></string>
+    <string name="bCancel">Cancel</string>
+    <string name="bSave">Save</string>
+    <string name="tvdbvnotes">Here are your notes</string>
+    <string name="tvdbvgetinfo">Get info from the database</string>
+    <string name="main_yellow">Change sticker to yellow</string>
+    <string name="main_green">Change sticker to green</string>
+    <string name="main_pink">Change sticker to pink</string>
+    <string name="main_white">Change sticker to white</string>
+    <string name="main_grey">Change sticker to grey</string>
+    <string name="main_exit">Exit</string>
+    <string name="main_view">See your notes</string>
+    <string name="bUpdate">Update</string>
+    <string name="lfimage"></string>
+    <string name="ethintpassword">Type your password</string>
+    <string name="blflogin">Log in</string>
+    <string name="bSignUp">Sign up</string>
+    <string name="ethintconfirmpassword">Confirm Password</string>
+    <string name="itdelete">Delete</string>
+
+
+</resources>

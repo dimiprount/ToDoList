@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <!--<item name="yellow" type="color">#ffff00</item>
+      <item name="green" type="color">#adff2f</item>
+      <item name="pink" type="color">#ffc0cb</item>
+      <item name="white" type="color">#ffffff</item>
+      <item name="grey" type="color">#808080</item>
+
+      <integer-array name="mycolors">
+          <item>@color/yellow</item>
+          <item>@color/green</item>
+          <item>@color/pink</item>
+          <item>@color/white</item>
+          <item>@color/grey</item>
+      </integer-array>-->
+</resources>

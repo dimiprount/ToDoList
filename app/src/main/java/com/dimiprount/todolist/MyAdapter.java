@@ -1,0 +1,73 @@
+package com.dimiprount.todolist;
+
+import java.util.ArrayList;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.TextView;
+
+public class MyAdapter extends BaseAdapter {
+
+	Context ctxt;
+	ArrayList<Notepad> mydata;
+	
+	// Constructor
+	public MyAdapter(Context context, ArrayList<Notepad> data) {
+
+		this.ctxt = context;
+		this.mydata = data;
+	}
+	
+	@Override
+	public int getCount() {
+		return mydata.size();
+	}
+
+	@Override
+	public Notepad getItem(int pos) {
+		return mydata.get(pos);
+	}
+
+	@Override
+	public long getItemId(int pos) {
+		return pos;
+	}
+
+	@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+		ViewHolder vh;
+		if (convertView == null) {	// If the first cell is empty
+			LayoutInflater li = (LayoutInflater) ctxt.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			convertView = li.inflate(R.layout.list_items, parent, false);	// How it will look like
+			//convertView = LayoutInflater.from(ctxt).inflate(R.layout.list_items, parent, false);	// How it will look like
+			//vh.showcell = (TextView) convertView.findViewById(R.id.tvlistitems);	// Restore the restult of the findViewById
+			vh = new ViewHolder(convertView);
+			convertView.setTag(vh);	// Create a new one object of holder
+		     
+		} else {
+			vh = (ViewHolder) convertView.getTag();// Recycle an existing object of holder in order not to create a new one
+		}		
+		Notepad notes = getItem(position);
+		vh.showcell.setText(notes.getNote());
+		notifyDataSetChanged();
+		return convertView;	
+	}
+
+	class ViewHolder {	// Definition of the holder
+		TextView showcell;
+		public ViewHolder(View v) {
+			// TODO Auto-generated constructor stub
+			showcell = (TextView) v.findViewById(R.id.tvlistitems);	// Restore the result of the findViewById
+		}
+	}
+
+	public void remove(Notepad selectedItem) {
+		// TODO Auto-generated method stub
+		mydata.remove(selectedItem);
+		notifyDataSetChanged();
+		
+		}
+	}

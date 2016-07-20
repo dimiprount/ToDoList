@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42sp"
+        android:contentDescription="@string/lfimage"
+        android:src="@mipmap/ic_launcher" />
+
+    <EditText
+        android:id="@+id/etpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="42sp"
+        android:layout_marginBottom="20sp"
+        android:ems="10"
+        android:hint="@string/ethintpassword"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/blflogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etpassword"
+        android:layout_centerHorizontal="true"
+        android:background="?android:attr/selectableItemBackground"
+        android:text="@string/blflogin" />
+
+    <Button
+        android:id="@+id/blfSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/blflogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40sp"
+        android:background="?android:attr/selectableItemBackground"
+        android:text="@string/bSignUp" />
+
+</RelativeLayout>
