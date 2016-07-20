@@ -46,7 +46,7 @@ public class Login extends ActionBarActivity implements OnClickListener {
 				String password = sp.searchpassword(passl);
 				sp.close();
 	
-				if (passl.equals(password)) { // if(password.equals(passl))
+				if (passl.equals(password)) {
 					startActivity(new Intent(this, MainActivity.class));
 				} else
 					Toast.makeText(this, "Incorect password!", Toast.LENGTH_SHORT)
@@ -80,7 +80,7 @@ public class Login extends ActionBarActivity implements OnClickListener {
     }
 
 	@Override
-    public boolean onTouchEvent(MotionEvent event) {		// Hide keyboard when pressing out of Eddittext
+    public boolean onTouchEvent(MotionEvent event) {
         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
         return true;
