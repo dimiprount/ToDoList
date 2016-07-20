@@ -76,7 +76,6 @@ public class DbView extends ActionBarActivity implements OnItemClickListener{
 				final SparseBooleanArray selected = lv.getCheckedItemPositions();
 				switch (item.getItemId()) {
 					case R.id.multidelete:
-						//info.delete(item);
 						AlertDialog.Builder adb = new AlertDialog.Builder(context);
 
 						adb.setMessage("Delete?").setCancelable(true)
