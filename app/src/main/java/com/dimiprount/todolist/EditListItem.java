@@ -28,7 +28,7 @@ public class EditListItem extends ActionBarActivity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.editlistitem);
 
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);	// Back button on Action Bar
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 		eteli = (EditText) findViewById(R.id.eteli);
 		eteli.getText().toString();
@@ -73,8 +73,7 @@ public class EditListItem extends ActionBarActivity implements OnClickListener {
 							new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog,
 													int id) {
-									// if this button is clicked, close
-									// current activity
+									
 									dialog.cancel();
 								}
 							})
@@ -85,10 +84,8 @@ public class EditListItem extends ActionBarActivity implements OnClickListener {
 									delete();
 								}
 							});
-			// create alert dialog
 			AlertDialog alertDialog = adbdel.create();
 
-			// show it
 			alertDialog.show();
 		}
 
@@ -117,8 +114,7 @@ public class EditListItem extends ActionBarActivity implements OnClickListener {
 								new DialogInterface.OnClickListener() {
 									public void onClick(DialogInterface dialog,
 														int id) {
-										// if this button is clicked, close
-										// current activity
+										
 										dialog.cancel();
 									}
 								})
@@ -129,10 +125,8 @@ public class EditListItem extends ActionBarActivity implements OnClickListener {
 										delete();
 									}
 								});
-				// create alert dialog
 				AlertDialog alertDialog = adbdel.create();
 
-				// show it
 				alertDialog.show();
 				break;
 		}
@@ -156,14 +150,14 @@ public class EditListItem extends ActionBarActivity implements OnClickListener {
 			boolean didItWork = true;
 			try {
 				DbDatabase ex = new DbDatabase(this);
-				String newnotes = eteli.getText().toString();	// Get the newnotes
+				String newnotes = eteli.getText().toString();
 				ex.open();
 				ex.updateEntry(oldnotes, newnotes);
 				ex.close();
 			} catch (Exception e) {
 				didItWork = false;
 				// Set up a dialog window
-				String error = e.toString(); // The dialog will refer to the exception itself
+				String error = e.toString();
 				Dialog d = new Dialog(this);
 				d.setTitle("Failure!");
 				TextView tv = new TextView(this);
@@ -198,7 +192,7 @@ public class EditListItem extends ActionBarActivity implements OnClickListener {
 		} catch (Exception e) {
 			didItWork = false;
 			// Set up a dialog window
-			String error = e.toString(); // The dialog will refer to the exception itself
+			String error = e.toString();
 			Dialog d = new Dialog(this);
 			d.setTitle("Failure!");
 			TextView tv = new TextView(this);
