@@ -35,14 +35,13 @@ public class DbView extends ActionBarActivity implements OnItemClickListener{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.dbview);
 
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);	// Back button on Action Bar
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 		lv = (ListView) findViewById(R.id.listView1);
 		info = new DbDatabase(this);
 		info.open();
 		data = info.getData();
 		info.close();
-		//lv.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, data)); 
 
 		ma = new MyAdapter(this,data);
 		lv.setAdapter(ma);
@@ -63,7 +62,7 @@ public class DbView extends ActionBarActivity implements OnItemClickListener{
 			}
 
 			@Override
-			public boolean onCreateActionMode(ActionMode mode, Menu menu) {	// Change ActionBar
+			public boolean onCreateActionMode(ActionMode mode, Menu menu) {
 				// TODO Auto-generated method stub
 				MenuInflater mi = mode.getMenuInflater();
 				mi.inflate(R.menu.multidelete, menu);
@@ -101,10 +100,8 @@ public class DbView extends ActionBarActivity implements OnItemClickListener{
 									}
 								});
 
-						// create alert dialog
 						AlertDialog alertDialog = adb.create();
 
-						// show it
 						alertDialog.show();
 
 
@@ -120,8 +117,7 @@ public class DbView extends ActionBarActivity implements OnItemClickListener{
 
 			@Override
 			public void onItemCheckedStateChanged(ActionMode mode, int position,
-												  long id, boolean checked) {	// Select items and how many they are selected
-				// TODO Auto-generated method stub
+												  long id, boolean checked) {
 				mode.setTitle("Selected Notes: " +lv.getCheckedItemCount());
 			}
 		});
@@ -133,8 +129,6 @@ public class DbView extends ActionBarActivity implements OnItemClickListener{
 		return super.onOptionsItemSelected(item);
 	}
 
-
-	// Open note to edit
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 		// TODO Auto-generated method stub
