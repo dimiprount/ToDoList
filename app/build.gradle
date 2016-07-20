@@ -3,10 +3,7 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
         todolist {
-            keyAlias 'todolist'
-            keyPassword 'oDpe-1726'
-            storeFile file('/home/dimprount/AndroidStudioProjects/Myapks/todolist.jks')
-            storePassword 'oDpe-1726'
+            
         }
     }
     compileSdkVersion 23
