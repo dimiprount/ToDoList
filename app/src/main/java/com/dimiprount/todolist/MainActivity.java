@@ -18,7 +18,6 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 	EditText etText;
 	Button bCancel, bSave, bView;
 	final Context context = this;
-	// Button bYellow, bGreen, bPink, bWhite, bGrey;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,72 +32,46 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 		bCancel.setOnClickListener(this);
 		bSave.setOnClickListener(this);
 		bView.setOnClickListener(this);
-
-	/*	// Set random colors in edittext
-		int[] myColors = getResources().getIntArray(R.array.mycolors);
-		int randomColor = myColors[new Random().nextInt(myColors.length)];
-		etText.setBackgroundColor(randomColor);*/
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
 		
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
 		if (id == R.id.save) {
 			save();
-			// Hide keyboard when icon save is pushed
 			InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 			imm.hideSoftInputFromWindow(bSave.getWindowToken(), 0);
 		}
 		if (id == R.id.cancel) {
 			etText.setText("");
-			// Hide keyboard when icon cancel is pushed
 			InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 			imm.hideSoftInputFromWindow(bCancel.getWindowToken(), 0);
 		}
 		if (id == R.id.view) {
 			startActivity(new Intent(this, DbView.class));
 		}
-	/**	if (id == R.id.yellow) {
-			etText.setBackgroundColor(Color.parseColor("#ffff00"));
-		}
-		if (id == R.id.green) {
-			etText.setBackgroundColor(Color.parseColor("#adff2f"));
-		}
-		if (id == R.id.pink) {
-			etText.setBackgroundColor(Color.parseColor("#ffc0cb"));
-		}
-		if (id == R.id.white) {
-			etText.setBackgroundColor(Color.parseColor("#ffffff"));
-		}
-		if (id == R.id.grey) {
-			etText.setBackgroundColor(Color.parseColor("#808080"));
-		}*/
+	
 		return super.onOptionsItemSelected(item);
 	}
 	
-	// Stop and exit app pushing the back button
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
 		super.onBackPressed();
 		
 		Intent intent = new Intent(Intent.ACTION_MAIN);
-		intent.addCategory(Intent.CATEGORY_HOME);	// Close the app and don't ask which app you want to use
-		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // Move activities to background
-		intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // Login activity will start firstly
+		intent.addCategory(Intent.CATEGORY_HOME);
+		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		startActivity(intent);
 		
-		this.finishAffinity();	// If the app is opened again, it won't have the password in the edittext
+		this.finishAffinity();
 		
 	}
 
