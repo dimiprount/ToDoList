@@ -40,7 +40,7 @@ public class MyAdapter extends BaseAdapter {
 		ViewHolder vh;
 		if (convertView == null) {
 			LayoutInflater li = (LayoutInflater) ctxt.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			convertView = li.inflate(R.layout.list_items, parent, false);	// How it will look like
+			convertView = li.inflate(R.layout.list_items, parent, false);
 			vh = new ViewHolder(convertView);
 			convertView.setTag(vh);
 		     
